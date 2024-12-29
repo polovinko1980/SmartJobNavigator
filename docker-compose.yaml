@@ -1,4 +1,5 @@
 services:
+
   frontend:
     image: polovinko1980/sjn-frontend:develop.latest
     container_name: frontend
@@ -13,6 +14,7 @@ services:
       - sjn
     volumes:
       - ./data/seed:/app/seed
+    command: ["gunicorn", "--bind", "0.0.0.0:8080", "-w", "2", "frontend:app", "-t", "120"]
 
   dispatcher:
     image: polovinko1980/sjn-dispatcher:develop.latest
@@ -28,6 +30,7 @@ services:
       - sjn
     volumes:
       - ./data/artifacts:/app/artifacts
+    command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8091", "--workers", "1", "--timeout-keep-alive", "120"]
 
   scraper:
     image: polovinko1980/sjn-scraper:develop.latest
@@ -36,18 +39,18 @@ services:
       - "8081:8081"
     networks:
       - sjn
+    command: ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8081", "--workers", "1", "--timeout-keep-alive", "120"]
 
   mongodb:
     image: mongo:latest
     container_name: mongodb
     ports:
       - "27017:27017"
-    environment:
-      - MONGO_LOGLEVEL=0
     volumes:
       - ./data/mongodb:/data/db
     networks:
       - sjn
+    command: ["mongod", "--logpath=/dev/null"]
 
 networks:
   sjn:
