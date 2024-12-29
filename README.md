@@ -48,10 +48,8 @@ Service-to-service communication is defined in the `docker-compose.yaml` file an
 
 ### [Creating Job Artifacts](https://www.youtube.com/watch?v=6FcLRjC9KP4)
 
-### [Checking Scraper Activity]()
+### [Add job post url manually](https://youtu.be/6JPFdrpvM8Q)
 
 ### [Adding a Note to a Rejected Application](https://youtu.be/4zPbxFxEpGM)
-
-### [Preparing for an Interview]()
 
 ### [Refreshing LinkedIn Profile Headline](https://youtu.be/nz_kqNzbV-w)
