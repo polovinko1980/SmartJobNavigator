@@ -14,7 +14,7 @@ services:
       - sjn
     volumes:
       - ./data/seed:/app/seed
-    command: ["gunicorn", "--bind", "0.0.0.0:8080", "-w", "2", "frontend:app", "-t", "120"]
+    command: ["gunicorn", "--bind", "0.0.0.0:8080", "-w", "1", "frontend:app", "-t", "120"]
 
   dispatcher:
     image: polovinko1980/sjn-dispatcher:develop.latest
