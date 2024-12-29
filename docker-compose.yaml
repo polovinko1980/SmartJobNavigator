@@ -1,0 +1,53 @@
+services:
+  frontend:
+    image: polovinko1980/sjn-frontend:develop.latest
+    container_name: frontend
+    env_file:
+      - docker.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dispatcher
+      - mongodb
+    networks:
+      - sjn
+    volumes:
+      - ./data/seed:/app/seed
+
+  dispatcher:
+    image: polovinko1980/sjn-dispatcher:develop.latest
+    container_name: dispatcher
+    env_file:
+      - docker.env
+    ports:
+      - "8091:8091"
+    depends_on:
+      - scraper
+      - mongodb
+    networks:
+      - sjn
+    volumes:
+      - ./data/artifacts:/app/artifacts
+
+  scraper:
+    image: polovinko1980/sjn-scraper:develop.latest
+    container_name: scraper
+    ports:
+      - "8081:8081"
+    networks:
+      - sjn
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_LOGLEVEL=0
+    volumes:
+      - ./data/mongodb:/data/db
+    networks:
+      - sjn
+
+networks:
+  sjn:
