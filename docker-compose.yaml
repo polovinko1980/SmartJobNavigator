@@ -35,6 +35,8 @@ services:
   scraper:
     image: polovinko1980/sjn-scraper:develop.latest
     container_name: scraper
+    env_file:
+      - docker.env
     ports:
       - "8081:8081"
     networks:

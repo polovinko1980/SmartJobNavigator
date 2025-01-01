@@ -44,12 +44,12 @@ Service-to-service communication is defined in the `docker-compose.yaml` file an
 
 ## Use Cases
 
-### [Getting Started](https://youtu.be/AyOjDZKjO-E)
+### [Getting Started](https://www.youtube.com/watch?v=AyOjDZKjO-E)
 
-### [Creating Job Artifacts](https://www.youtube.com/watch?v=6FcLRjC9KP4)
+### [![Create Job Artifacts](https://img.youtube.com/vi/6FcLRjC9KP4/0.jpg)](https://www.youtube.com/watch?v=6FcLRjC9KP4)
 
-### [Add job post url manually](https://youtu.be/6JPFdrpvM8Q)
+### [Add Job Post Url Manually](https://youtu.be/6JPFdrpvM8Q)
 
-### [Adding a Note to a Rejected Application](https://youtu.be/4zPbxFxEpGM)
+### [Add a Note to a Rejected Application](https://youtu.be/4zPbxFxEpGM)
 
-### [Refreshing LinkedIn Profile Headline](https://youtu.be/nz_kqNzbV-w)
+### [Refresh LinkedIn Profile Headline](https://youtu.be/nz_kqNzbV-w)
